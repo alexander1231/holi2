@@ -33,7 +33,6 @@ tabla['146'] = {
 	}
 }
 
-
 var edad,
 		genero,
 		talla
@@ -55,11 +54,12 @@ form.addEventListener('submit',function(event){
 
 	var rango = rangoideal(genero,talla)
 	console.log(rango.min, rango.max)
+	$(".rango").html(rango.min.toString() +"KG" + "  a   "+ rango.max.toString()+"KG")
 },false)
 
 
 function rangoideal(genero,talla){
-	if (edad > 18) {
+	if (edad > 17) {
 
 		console.log(tabla[talla])
 
