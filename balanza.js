@@ -34,23 +34,33 @@ tabla['146'] = {
 }
 
 
-var edad = $("input[name=edad]")
-var genero = $('input[name=género]')
-var talla = $('input[name=talla]')
+var edad,
+		genero,
+		talla
 
 var form = document.getElementById('form');
-var genero = "M"
-var talla = "145"
+// var genero = "M"
+// var talla = "145"
 
 form.addEventListener('submit',function(event){
 	event.preventDefault();
+
+	console.log('submit')
+
+	edad = $("input[name=edad]").val()
+	genero = $('.cal:checked').val()
+	talla = $('input[name=talla]').val()
+
+	console.log('valores', edad, genero, talla)
+
 	var rango = rangoideal(genero,talla)
 	console.log(rango.min, rango.max)
 },false)
 
 
 function rangoideal(genero,talla){
-	if (edad.val() > 18) {
+	if (edad > 18) {
+
 		console.log(tabla[talla])
 
 
